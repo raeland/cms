@@ -3,11 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { ContactListComponent } from './contacts/contact-list/contact-list.component';
+import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ContactsComponent // Remove Contact from here if it's not a component
+    ContactsComponent,
+    ContactListComponent,
+    ContactDetailComponent
   ],
   imports: [
     BrowserModule,
