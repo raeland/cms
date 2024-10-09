@@ -1,29 +1,24 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <div class="row">
-            <div class="col-xs-6">
-                <h1 class="panel-title text-left">Contacts</h1>
-            </div>
             <div class="col-xs-6 text-right">
                 <button class="btn btn-success">New Contact</button>
             </div>
         </div>
     </div>
+    <hr>
     <div class="panel-body">
         <div class="col-xs-8">
-            <a
-            class="contact-list"
+            <app-contact-list
             *ngFor="let contact of contacts"
-            >
-            <!-- <div class="col-xs-8"> -->
-                {{ contact.name }}  <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="contact-image">
-            </a>
+            [contact]="contact"
+            (click)="onContactSelected(contact)"></app-contact-list>
+                <!-- <h4>{{ contact.name }}</h4> <img [src]="contact.imageUrl" alt="{{ contact.name }}"
+                    class="contact-image"> -->
         </div>
-        
-        <!-- <app-contact-item *ngFor="let contact of contacts" class="row contact-item"></app-contact-item> -->
-        </div>
-        <div class="col-xs-4 text-right">
-            <!-- <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="contact-image"> -->
-        </div>
+
     </div>
-<!-- </div> -->
+    <div class="col-xs-4 text-right">
+        <!-- <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="contact-image"> -->
+    </div>
+</div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Contact } from './contact.model';
+
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
@@ -7,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactsComponent implements OnInit {
   id: string;
+  selectedContact: Contact;
 
   constructor() {
     this.id = ''; // Initialize id in the constructor
@@ -15,4 +18,5 @@ export class ContactsComponent implements OnInit {
   ngOnInit() {
     // Initialization logic here
   }
+  
 }

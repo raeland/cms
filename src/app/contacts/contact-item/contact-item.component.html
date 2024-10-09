@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-xs-12">
       <div class="panel panel-default">
         <div class="panel-heading cl-panel-heading">
@@ -6,21 +6,24 @@
           <a href="#" class="btn btn-success">New Contact</a>
         </div>
         <div class="cl-panel-body">
-          <div class="cl-panel-body-wrapper panel panel-default">
+          <div class="cl-panel-body-wrapper panel panel-default"> -->
             <!-- <h4 class="">{{ contact.name }}</h4>
             <img [src]="contact.imageUrl" alt="{{ contact.name }}" /> -->
-            <div *ngFor="let contact of contacts" class="row">
+            <!-- <div *ngFor="let contact of contacts" class="row"> -->
               <!--name on left-->
+              <a
+              class="row contact-item list-group-item clearfix">
               <div class="col-xs-8">
                 <h4>{{ contact.name }}</h4>
               </div>
-              <div class="panel-body row media">
+              <!-- <div class="panel-body row media"> -->
                 <!--image on right-->
                 <div class="col-xs-4 text-right">
-                  <img class="media-object img-responsive" [src]="contact.imageUrl" alt="{{ contact.name }}" style="width: 50px; height: 50px;">
                 </div>
+                </a>
+                  <!-- <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="contact-image"> -->
+                <!-- </div>
           </div>
-        </div>
       </div>
     </div>
-  </div>
+  </div> -->
