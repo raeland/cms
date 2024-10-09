@@ -6,12 +6,19 @@
           <a href="#" class="btn btn-success">New Contact</a>
         </div>
         <div class="cl-panel-body">
-          <div
-            class="cl-panel-body-wrapper panel panel-default"
-            *ngFor="let contact of contacts"
-          >
-            <h4 class="">{{ contact.name }}</h4>
-            <img src="{{ contact.imageUrl }}" alt="{{ contact.name }}" />
+          <div class="cl-panel-body-wrapper panel panel-default">
+            <!-- <h4 class="">{{ contact.name }}</h4>
+            <img [src]="contact.imageUrl" alt="{{ contact.name }}" /> -->
+            <div *ngFor="let contact of contacts" class="row">
+              <!--name on left-->
+              <div class="col-xs-8">
+                <h4>{{ contact.name }}</h4>
+              </div>
+              <div class="panel-body row media">
+                <!--image on right-->
+                <div class="col-xs-4 text-right">
+                  <img class="media-object img-responsive" [src]="contact.imageUrl" alt="{{ contact.name }}" style="width: 50px; height: 50px;">
+                </div>
           </div>
         </div>
       </div>
