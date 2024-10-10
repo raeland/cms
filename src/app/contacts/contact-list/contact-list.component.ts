@@ -19,6 +19,6 @@ export class ContactListComponent implements OnInit {
   ngOnInit() { }
 
   onContactSelected(contact: Contact) {
-    this.contactSelectedEvent.emit(contact);
+    this.contactSelected.emit(contact);
   }
 }
