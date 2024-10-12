@@ -7,7 +7,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { ContactListComponent } from './contacts/contact-list/contact-list.component';
 import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 import { DocumentsComponent } from './documents/documents.component';
-//import { DocumentListComponent } from './documents/document-list.component';
+import { DocumentListComponent } from './documents/document-list/document-list.component';
 import { DocumentItemComponent } from './documents/document-item/document-item.component';
 import { DocumentDetailComponent } from './documents/document-detail/document-detail.component';
 import { MessagesComponent } from './messages/messages.component';
@@ -23,7 +23,7 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
     ContactListComponent,
     ContactDetailComponent,
     DocumentsComponent,
-    // DocumentListComponent,
+    DocumentListComponent,
     DocumentItemComponent,
     DocumentDetailComponent,
     MessagesComponent,
