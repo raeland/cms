@@ -14,6 +14,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { MessageItemComponent } from './messages/message-item/message-item.component';
 import { MessageEditComponent } from './messages/message-edit/message-edit.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
+import { ContactsServiceTsComponent } from './contacts.service.ts/contacts.service.ts.component';
+import { ContactServiceTsComponent } from './contacts/contact.service.ts/contact.service.ts.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
     MessageItemComponent,
     MessageEditComponent,
     MessageListComponent,
+    ContactsServiceTsComponent,
+    ContactServiceTsComponent,
   ],
   imports: [
     BrowserModule,
