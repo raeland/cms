@@ -14,8 +14,8 @@ import { MessagesComponent } from './messages/messages.component';
 import { MessageItemComponent } from './messages/message-item/message-item.component';
 import { MessageEditComponent } from './messages/message-edit/message-edit.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
-import { ContactsServiceTsComponent } from './contacts.service.ts/contacts.service.ts.component';
-import { ContactServiceTsComponent } from './contacts/contact.service.ts/contact.service.ts.component';
+import { ContactItemComponent } from './contacts/contact-item/contact-item.component';
+// import { ContactsService } from './contacts/contact.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import { ContactServiceTsComponent } from './contacts/contact.service.ts/contact
     ContactsComponent,
     HeaderComponent,
     ContactListComponent,
+    ContactItemComponent,
     ContactDetailComponent,
     DocumentsComponent,
     DocumentListComponent,
@@ -32,8 +33,7 @@ import { ContactServiceTsComponent } from './contacts/contact.service.ts/contact
     MessageItemComponent,
     MessageEditComponent,
     MessageListComponent,
-    ContactsServiceTsComponent,
-    ContactServiceTsComponent,
+    // ContactsService,
   ],
   imports: [
     BrowserModule,

@@ -7,16 +7,11 @@ import { Contact } from './contact.model';
   templateUrl: './contacts.component.html',
   styleUrls: ['./contacts.component.css']
 })
-export class ContactsComponent implements OnInit {
+export class ContactsComponent {
   id: string;
   selectedContact: Contact;
 
   constructor() {
     this.id = ''; // Initialize id in the constructor
   }
-
-  ngOnInit() {
-    // Initialization logic here
-  }
-
 }

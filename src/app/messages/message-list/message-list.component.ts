@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
+
+import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'app-message-list',
   templateUrl: './message-list.component.html',
-  styleUrl: './message-list.component.css'
+  styleUrls: ['./message-list.component.css']
 })
-export class MessageListComponent {
 
+export class MessageListComponent {
+    // messages: Message[] = [];
+  
+    constructor() {}  
 }
+  
+  
