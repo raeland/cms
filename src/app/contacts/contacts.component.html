@@ -4,6 +4,8 @@
         <app-contact-list (selectedContactEvent)="selectedContact = $event"></app-contact-list>
     </div>
     <div class="col-md-4">
-        <app-contact-detail (selectedContactEvent)="selectedContact = $event"></app-contact-detail>
+        <app-contact-detail *ngIf="selectedContact; else infoText"
+        [contact]="selectedContact"></app-contact-detail>
+        <ng-template #infoText></ng-template>
     </div>
 </div>
