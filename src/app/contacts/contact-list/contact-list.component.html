@@ -6,11 +6,12 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <app-contact-item *ngFor="let contactElement of contacts" [contact]="contactElement"
+                (recipeSelected)="onContactSelected(contactElement)"></app-contact-item>
+            <!-- </div>
 <div class="panel-body">    
-    
-    <app-contact-item  
-    *ngFor="let contact of contacts"
-    [contact]="contact"
-    (click)="onContactSelected(contact)"></app-contact-item> 
-</div>
-</div>
+    <app-contact-item></app-contact-item> 
+</div> -->
+        </div>

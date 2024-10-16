@@ -39,7 +39,7 @@ import { ContactItemComponent } from './contacts/contact-item/contact-item.compo
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [],  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
