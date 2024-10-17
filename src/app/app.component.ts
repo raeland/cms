@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cms';
-  loadFeature = 'contact';
+  selectedFeature = 'contact';
 
-  onNavigate(feature: string) {
-    this.loadFeature = feature;
+  switchView(selectedFeature: string) {
+    this.selectedFeature = selectedFeature;
   }
 }
