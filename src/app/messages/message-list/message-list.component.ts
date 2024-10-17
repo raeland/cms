@@ -1,6 +1,9 @@
 import { Component,OnInit } from '@angular/core';
 
 import { ChangeDetectorRef } from '@angular/core';
+import { MessagesComponent } from '../messages.component';
+import { Message } from '../message.model';
+
 
 @Component({
   selector: 'app-message-list',
@@ -9,9 +12,13 @@ import { ChangeDetectorRef } from '@angular/core';
 })
 
 export class MessageListComponent {
-    // messages: Message[] = [];
+    messages: Message[] = [];
   
     constructor() {}  
+
+    onAddMessage(message: Message) {
+      this.messages.push(message);
+    }
 }
   
   

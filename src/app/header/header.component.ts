@@ -9,9 +9,9 @@ import { EventManager } from '@angular/platform-browser';
 export class HeaderComponent {
   @Output() selectedFeatureEvent = new EventEmitter<string>();
 
+  // constructor() { }
+
   onSelected(selectedEvent: string) {
     this.selectedFeatureEvent.emit(selectedEvent);
   }
-
-  // constructor() { }
 }
