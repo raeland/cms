@@ -14,4 +14,15 @@ export class HeaderComponent {
   onSelected(selectedEvent: string) {
     this.selectedFeatureEvent.emit(selectedEvent);
   }
+
+  isUserDropdownOpen: boolean = false;
+  isNavbarCollapsed: boolean = true;
+
+  toggleUserDropdown() {
+    this.isUserDropdownOpen = !this.isUserDropdownOpen;
+  }
+
+  toggleNavbar() {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
 }
