@@ -15,7 +15,8 @@ import { MessageItemComponent } from './messages/message-item/message-item.compo
 import { MessageEditComponent } from './messages/message-edit/message-edit.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
 import { ContactItemComponent } from './contacts/contact-item/contact-item.component';
-// import { ContactsService } from './contacts/contact.service';
+import { ContactsService } from './contacts/contact.service';
+import { MOCKCONTACTS } from './contacts/MOCKCONTACTS';
 
 @NgModule({
   declarations: [
