@@ -1,8 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 
-import { ChangeDetectorRef } from '@angular/core';
-import { MessagesComponent } from '../messages.component';
+
 import { Message } from '../message.model';
+import { MessageService } from '../message.service';
 
 
 @Component({
@@ -14,8 +14,11 @@ import { Message } from '../message.model';
 export class MessageListComponent {
     messages: Message[] = [];
   
-    constructor() {}  
+    constructor(private messageService: MessageService) {}  
 
+    ngOnInit(): void {
+      this.messages = this.messageService.getMessages();
+    }
     onAddMessage(message: Message) {
       this.messages.push(message);
     }
