@@ -7,12 +7,13 @@ import { MOCKCONTACTS } from './MOCKCONTACTS';
   providedIn: 'root'
 })
 export class ContactsService {
-
-  contacts: Contact []=[];
+  contactSelectedEvent = new EventEmitter<Contact>
 
   constructor() { 
     this.contacts = MOCKCONTACTS;
   }
+  private contacts: Contact []=[];
+
   getContacts(): Contact[] {
     return this.contacts.slice();
   }

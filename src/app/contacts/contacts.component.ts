@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { Contact } from './contact.model';
+import { ContactsService } from './contact.service';
 
 @Component({
   selector: 'app-contacts',
@@ -8,10 +9,15 @@ import { Contact } from './contact.model';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent {
-  id: string;
+  // id: string;
   selectedContact: Contact;
+  // @Output() selectedContactEvent = new EventEmitter<Contact>();
 
-  constructor() {
-    this.id = ''; // Initialize id in the constructor
+  constructor(private contactService: ContactsService) {}
+
+  ngOnInit(): void {
+    this.contactService.contactSelectedEvent.subscribe((contact: Contact) => {
+      this.selectedContact = contact
+    })
   }
 }
