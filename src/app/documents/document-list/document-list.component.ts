@@ -9,7 +9,7 @@ import { DocumentService } from '../document.service';
   styleUrls: ['./document-list.component.css']
 })
 export class DocumentListComponent {
-  @Output() selectedDocumentEvent = new EventEmitter();
+  // @Output() selectedDocumentEvent = new EventEmitter();
 
   documents: Document[] = [
     // new Document('1', 'Doc1', 'DocDescription1', 'www.abc1.org', []),
@@ -26,6 +26,6 @@ constructor(private documentService: DocumentService) {}
     this.documents = this.documentService.getDocuments();
   }
   onSelectedDocument(document: Document) {
-    this.selectedDocumentEvent.emit(document);
+    this.documentService.documentSelectedEvent.emit(document);
   }
 }
