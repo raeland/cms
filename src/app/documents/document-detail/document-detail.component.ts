@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Document } from '../document.model';
 import { DocumentService } from '../document.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
@@ -22,7 +22,7 @@ ngOnInit() {
   .subscribe(
     (params: Params) => {
       this.id = params['id'];
-      this.document = this.documentService.getDocument(this.id);
+      // this.document = this.documentService.getDocument(this.id);
     }
   );
 }
