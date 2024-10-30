@@ -19,13 +19,14 @@ export class DocumentListComponent {
     // new Document('5', 'Doc5', 'DocDescription5', 'www.abc5.org', [])
   ];
 selectedDocument: Document;
+// documentId: string = '';
 
 constructor(private documentService: DocumentService) {}
 
   ngOnInit(): void {
     this.documents = this.documentService.getDocuments();
   }
-  onSelectedDocument(document: Document) {
-    this.documentService.documentSelectedEvent.emit(document);
-  }
+  // onSelectedDocument(document: Document) {
+  //   this.documentService.documentSelectedEvent.emit(document);
+  // }
 }
