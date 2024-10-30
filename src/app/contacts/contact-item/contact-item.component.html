@@ -1,9 +1,16 @@
-<a class="row contact-item list-group-item">
+<a href="#" 
+ class="row contact-item list-group-item"
+ routerLinkActive="active"
+routerLink="{{contact.id}}">
   <!-- <div class="row contact-item"> -->
   <div class="col-xs-8">
     <h3>{{ contact.name }}</h3>
   </div>
   <div class="col-xs-8 text-right">
   </div>
-  <img [src]="contact.imageUrl" alt="{{ contact.name }}" class="contact-image">
+  <span class="pull-right">
+  <img src="{{ contact.imageUrl }}" 
+  alt="{{ contact.name }}" 
+  class="contact-image">
+</span>
 </a>

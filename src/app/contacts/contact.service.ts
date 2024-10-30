@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { Contact } from './contact.model';
 
 import { MOCKCONTACTS } from './MOCKCONTACTS';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class ContactsService {
   constructor() { 
     this.contacts = MOCKCONTACTS;
   }
-  private contacts: Contact []=[];
+   contacts: Contact[] = [];
 
   getContacts(): Contact[] {
     return this.contacts.slice();
@@ -25,5 +26,11 @@ export class ContactsService {
       }
     }
     return null;
+  }
+
+  deleteContact(contact: Contact) {
+    if (!contact) {
+      return;
+    }
   }
 }

@@ -16,7 +16,10 @@ const routes: Routes = [
     { path: ':id/edit', component: DocumentEditComponent },
   ]},
   { path: 'messages', component: MessageListComponent },
-  { path: 'contacts', component: ContactsComponent },
+  { path: 'contacts', component: ContactsComponent, children: [
+    { path: ':id', component: ContactDetailComponent },
+  ]},
+  { path: '**', redirectTo: '/not-found' } //make sure this is ALWAYS the last path listed!
   ];
 
 @NgModule({
