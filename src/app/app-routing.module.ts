@@ -5,6 +5,8 @@ import { MessageListComponent } from './messages/message-list/message-list.compo
 import { ContactsComponent } from './contacts/contacts.component';
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
 import { DocumentDetailComponent } from './documents/document-detail/document-detail.component';
+import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
+import { DocumentService } from './documents/document.service';
 
 const routes: Routes = [
   { path: '', redirectTo: '/documents', pathMatch: 'full' },
