@@ -12,14 +12,14 @@ export class DocumentService {
 
   // documentSelectedEvent = new EventEmitter<Document>();
 
-  constructor() { 
+  constructor() {
     this.documents = MOCKDOCUMENTS;
-   }
-   getDocuments(): Document[] {
+  }
+  getDocuments(): Document[] {
     return this.documents.slice();
   }
 
-  getDocument(id:string): Document | null {
+  getDocument(id: string): Document | null {
     for (let document of this.documents) {
       if (document.id === id) {
         return document;
@@ -33,7 +33,7 @@ export class DocumentService {
       return;
     }
     const pos = this.documents.indexOf(document);
-    if(pos < 0) {
+    if (pos < 0) {
       return;
     }
     this.documents.splice(pos, 1);
