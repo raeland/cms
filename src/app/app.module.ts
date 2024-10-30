@@ -18,6 +18,7 @@ import { ContactItemComponent } from './contacts/contact-item/contact-item.compo
 import { ContactsService } from './contacts/contact.service';
 import { MOCKCONTACTS } from './contacts/MOCKCONTACTS';
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
+import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 // import { WindRefService } from 'src/app/wind-ref.service';
 
 @NgModule({
@@ -37,6 +38,7 @@ import { DocumentEditComponent } from './documents/document-edit/document-edit.c
     MessageEditComponent,
     MessageListComponent,
     DocumentEditComponent,
+    ContactEditComponent,
     // WindRefService,
   ],
   imports: [

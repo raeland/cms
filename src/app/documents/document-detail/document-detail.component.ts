@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Document } from '../document.model';
 import { DocumentService } from '../document.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { WindRefService } from 'src/app/wind-ref.service';
+import { WindRefService } from 'src/app/wind-ref.service'; // idk why this isn't working :(
 
 @Component({
   selector: 'app-document-detail',
@@ -16,7 +16,7 @@ export class DocumentDetailComponent implements OnInit {
   nativeWindow: any;
 
   constructor(private documentService: DocumentService,
-    private windowRefService: WindRefService,
+    private windowRefService: WindRefService, // idk why this isn't working :(
     private route: ActivatedRoute,
     private router: Router) {
     this.nativeWindow = windowRefService.getNativeWindow();
@@ -27,7 +27,7 @@ export class DocumentDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = params['id'];
-          this.document = this.documentService.getDocument(params['id']);
+          this.document = this.documentService.getDocument(params['id']); // idk why this isn't working :(
         }
       );
   }

@@ -7,6 +7,7 @@ import { DocumentEditComponent } from './documents/document-edit/document-edit.c
 import { DocumentDetailComponent } from './documents/document-detail/document-detail.component';
 import { ContactDetailComponent } from './contacts/contact-detail/contact-detail.component';
 import { DocumentService } from './documents/document.service';
+import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/documents', pathMatch: 'full' },
@@ -17,7 +18,9 @@ const routes: Routes = [
   ]},
   { path: 'messages', component: MessageListComponent },
   { path: 'contacts', component: ContactsComponent, children: [
+    { path: 'new', component: ContactEditComponent },
     { path: ':id', component: ContactDetailComponent },
+    { path: ':id/edit', component: ContactEditComponent}
   ]},
   { path: '**', redirectTo: '/not-found' } //make sure this is ALWAYS the last path listed!
   ];

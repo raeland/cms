@@ -16,7 +16,7 @@ export class ContactsComponent {
   constructor(private contactService: ContactsService) {}
 
   ngOnInit(): void {
-    this.contactService.contactSelectedEvent.subscribe((contact: Contact) => {
+    this.contactService.contactChangedEvent.subscribe((contact: Contact) => {
       this.selectedContact = contact
     })
   }

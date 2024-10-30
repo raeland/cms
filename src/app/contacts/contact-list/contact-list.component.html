@@ -2,7 +2,7 @@
     <div class="panel-heading">
         <div class="row">
             <div class="col-xs-12 text-right">
-                <button class="btn btn-success">New Contact</button>
+                <button class="btn btn-success" routerLink="new">New Contact</button>
             </div>
         </div>
     </div>
@@ -11,10 +11,7 @@
             <div class="col-md-12">
                 <app-contact-item 
                 *ngFor="let contactElement of contacts" 
-                [contact]="contactElement"
-                (click)="onSelected(contactElement)"
-                (recipeSelected)="onSelected(contactElement)"
-                ></app-contact-item>
-                
+                [contact]="contactElement">
+            </app-contact-item>   
             </div>
         </div>

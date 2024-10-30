@@ -9,6 +9,7 @@ import { Subject } from 'rxjs';
 })
 export class ContactsService {
   contactSelectedEvent = new EventEmitter<Contact>
+  contactChangedEvent = new EventEmitter<Contact[]>();
 
   constructor() { 
     this.contacts = MOCKCONTACTS;
