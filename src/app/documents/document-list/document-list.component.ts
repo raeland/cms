@@ -26,7 +26,7 @@ constructor(private documentService: DocumentService) {}
   ngOnInit(): void {
     this.documents = this.documentService.getDocuments();
   }
-  // onSelectedDocument(document: Document) {
-  //   this.documentService.documentSelectedEvent.emit(document);
-  // }
+  onSelectedDocument(document: Document) {
+    this.documentService.documentSelectedEvent.emit(document);
+  }
 }
