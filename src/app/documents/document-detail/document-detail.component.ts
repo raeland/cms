@@ -15,11 +15,13 @@ export class DocumentDetailComponent implements OnInit {
   id: string;
   nativeWindow: any;
 
-  constructor(private documentService: DocumentService,
-    private windowRefService: WindRefService, // idk why this isn't working :(
+  constructor(
+    private documentService: DocumentService,
+    // private windowRefService: WindRefService, // idk why this isn't working :(
     private route: ActivatedRoute,
-    private router: Router) {
-    this.nativeWindow = windowRefService.getNativeWindow();
+    private router: Router
+  ) {
+    this.nativeWindow = windRefService.getNativeWindow();
   }
 
   ngOnInit() {
@@ -27,7 +29,7 @@ export class DocumentDetailComponent implements OnInit {
       .subscribe(
         (params: Params) => {
           this.id = params['id'];
-          this.document = this.documentService.getDocument(params['id']); // idk why this isn't working :(
+          this.document = this.documentService.getDocument(this.id); // idk why this isn't working :(
         }
       );
   }
@@ -36,7 +38,7 @@ export class DocumentDetailComponent implements OnInit {
     this.router.navigate(['edit'], { relativeTo: this.route });
   }
 
-  OnView() {
+  onView() {
     if (this.document.url) {
       this.nativeWindow.open(this.document.url);
     }
