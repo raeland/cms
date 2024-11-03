@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class WindRefService {
-// windowRefService: WindRefService;
+windowRefService: WindRefService;
 
   constructor() { }
 

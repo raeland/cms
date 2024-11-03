@@ -10,7 +10,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class ContactDetailComponent implements OnInit {
 //  @Input() 
- contact: Contact;
+ contact: Contact | null;
  id: string;
 
   constructor(
@@ -20,22 +20,24 @@ export class ContactDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.params.subscribe(
+    this.route.params
+    .subscribe(
       (params: Params) => {
         this.contact = this.contactsService.getContact(params['id']);
       }
     )
   }
 
-  // ngOnInit(): void {
-  //   this.route.params.subscribe((params: Params) => {
+  // ngOnInit() {
+  //   this.route.params
+  //   .subscribe((params: Params) => {
   //     const contactId = params['id'];
   //             this.contact = this.contactsService.getContact(contactId);
   //   });
   // }
 
-  onDelete() {
-    this.contactsService.deleteContact(this.contact);
-    this.router.navigateByUrl('/contacts');
-  }
+  // onDelete() {
+  //   this.contactsService.deleteContact(this.contact);
+  //   this.router.navigateByUrl('/contacts');
+  // }
   }

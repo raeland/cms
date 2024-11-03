@@ -15,11 +15,9 @@ import { MessageItemComponent } from './messages/message-item/message-item.compo
 import { MessageEditComponent } from './messages/message-edit/message-edit.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
 import { ContactItemComponent } from './contacts/contact-item/contact-item.component';
-import { ContactsService } from './contacts/contact.service';
-import { MOCKCONTACTS } from './contacts/MOCKCONTACTS';
 import { DocumentEditComponent } from './documents/document-edit/document-edit.component';
 import { ContactEditComponent } from './contacts/contact-edit/contact-edit.component';
-// import { WindRefService } from 'src/app/wind-ref.service';
+// import { WindRefService } from '..//wind-ref.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +27,6 @@ import { ContactEditComponent } from './contacts/contact-edit/contact-edit.compo
     ContactListComponent,
     ContactItemComponent,
     ContactDetailComponent,
-    ContactsService,
     DocumentsComponent,
     DocumentListComponent,
     DocumentItemComponent,

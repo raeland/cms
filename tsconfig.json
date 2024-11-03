@@ -16,6 +16,10 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "bundler",
+    "baseUrl": "./",
+    "paths": {
+      "@app/*": ["src/app/*"]
+    },
     // "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
