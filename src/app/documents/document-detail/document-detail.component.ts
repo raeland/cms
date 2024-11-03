@@ -41,13 +41,13 @@ export class DocumentDetailComponent implements OnInit {
   }
 
   onView() {
-    if (this.document.url) {
-      this.nativeWindow.open(this.document.url);
+    if (this.document?.url) {
+      this.nativeWindow.open(this.document?.url);
     }
   }
 
   onDelete() {
-    this.documentService.deleteDocument(this.document);
+    this.documentService.deleteDocument(this.document?);
     this.router.navigate(['/documents'], { relativeTo: this.route });
   }
 
