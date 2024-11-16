@@ -50,9 +50,7 @@ addDocument(newDocument: Document) {
 }
 
   updateDocument(originalDocument: Document, newDocument: Document) {
-    //check if documents are undefined
     if (!originalDocument || !newDocument) {
-      //if so, exit
       return;
     }
 
