@@ -9,10 +9,12 @@ import { MOCKDOCUMENTS } from './MOCKDOCUMENTS';
 })
 export class DocumentService {
   private documents: Document[] = MOCKDOCUMENTS;
+  maxDocumentId: number;
 
   documentSelectedEvent = new EventEmitter<Document>();
   documentChangedEvent = new EventEmitter<Document[]>();
   documentListChangedEvent = new Subject<Document[]>();
+
 
   constructor() {
     this.documents = MOCKDOCUMENTS;
@@ -29,6 +31,36 @@ export class DocumentService {
     }
     return null;
   }
+
+  getMaxId(): number {
+    let maxId = 0;
+   for (const document of this.documents) {
+    const currentId = +document.id;
+    if (currentId > maxId) {
+      maxId = currentId;
+    } 
+   }  
+    return maxId;
+}
+
+addDocument(newDocument: Document) {
+  if (newDocument) {
+    return;
+  } 
+}
+
+  updateDocument(originalDocument: Document, newDocument: Document) {
+    //check if documents are undefined
+    if (!originalDocument || !newDocument) {
+      //if so, exit
+      return;
+    }
+
+    const pos = this.documents.indexOf(originalDocument);
+    if (pos < 0) {
+      return;
+    }
+}
 
   deleteDocument(document: Document) {
     if (!document) {
