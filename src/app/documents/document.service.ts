@@ -1,7 +1,8 @@
 import { Injectable, EventEmitter } from '@angular/core';
-
+import { Subject } from 'rxjs';
 import { Document } from './document.model';
 import { MOCKDOCUMENTS } from './MOCKDOCUMENTS';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class DocumentService {
   private documents: Document[] = MOCKDOCUMENTS;
 
   documentSelectedEvent = new EventEmitter<Document>();
- documentChangedEvent = new EventEmitter<Document[]>();
+  documentChangedEvent = new EventEmitter<Document[]>();
+  documentListChangedEvent = new Subject<Document[]>();
 
   constructor() {
     this.documents = MOCKDOCUMENTS;
