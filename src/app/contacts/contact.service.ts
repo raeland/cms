@@ -10,11 +10,13 @@ import { Subject } from 'rxjs';
 export class ContactsService {
   contactSelectedEvent = new EventEmitter<Contact>
   contactChangedEvent = new EventEmitter<Contact[]>();
+  maxContactId: number;
+  contacts: Contact[] = [];
 
   constructor() { 
     this.contacts = MOCKCONTACTS;
   }
-   contacts: Contact[] = [];
+   
 
   getContacts(): Contact[] {
     return this.contacts.slice();
@@ -29,6 +31,31 @@ export class ContactsService {
     return null;
   }
 
+  getMaxId(): number {
+    let maxId = 0;
+    for (const contact of this.contacts) {
+      const currentId = +contact.id;
+      if (currentId > maxId) {
+        maxId = currentId;
+      }
+    }
+    return maxId;
+  }
+
+  addContact(newContact: Contact) {
+    if (!newContact) {
+      return;
+    }
+  }
+
+  updateContact(originalContact: Contact, newContact: Contact) {
+
+    if (!originalContact || !newContact) {
+      //exit
+      return;
+    }
+  }
+  
   deleteContact(contact: Contact) {
     if (!contact) {
       return;
