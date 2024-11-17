@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, NgForm } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { DocumentService } from '../document.service';
 import { Document } from '../document.model';
@@ -16,8 +16,8 @@ export class DocumentEditComponent implements OnInit {
   editMode: boolean = false;
 
   constructor(
-    private documentService: DocumentService, 
-    private router: Router, 
+    private documentService: DocumentService,
+    private router: Router,
     private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -28,37 +28,37 @@ export class DocumentEditComponent implements OnInit {
           this.editMode = false;
           return;
         }
-   
+
         // this.originalDocument = this.documentService.getDocument(id);
         if (!this.originalDocument) {
           return;
         }
-    
+
         this.editMode = true;
         this.document = JSON.parse(JSON.stringify(this.originalDocument));
-  }
+      }
     )
-}
+  }
 
   onCancel() {
     this.router.navigate(['/documents'], { relativeTo: this.route });
   }
 
   onSubmit(form: NgForm) {
-		const values = form.value;
-		const newDocument = new Document(
-      values.null, 
-      values.name, 
-      values.description, 
-      values.documentUrl, 
+    const values = form.value;
+    const newDocument = new Document(
+      values.null,
+      values.name,
+      values.description,
+      values.documentUrl,
       values.null);
 
-		if (this.editMode === true) {
-			this.documentService.updateDocument(this.originalDocument, newDocument);
-		} else {
-			this.documentService.addDocument(newDocument);
-		}
+    if (this.editMode === true) {
+      this.documentService.updateDocument(this.originalDocument, newDocument);
+    } else {
+      this.documentService.addDocument(newDocument);
+    }
 
-		this.router.navigate(['/documents'], { relativeTo: this.route });
-	}
+    this.router.navigate(['/documents'], { relativeTo: this.route });
+  }
 }

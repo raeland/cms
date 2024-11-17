@@ -19,22 +19,22 @@ export class ContactDetailComponent implements OnInit {
     private route: ActivatedRoute
   ) { }
 
-  ngOnInit() {
-    this.route.params
-    .subscribe(
-      (params: Params) => {
-        this.contact = this.contactsService.getContact(params['id']);
-      }
-    )
-  }
-
   // ngOnInit() {
   //   this.route.params
-  //   .subscribe((params: Params) => {
-  //     const contactId = params['id'];
-  //             this.contact = this.contactsService.getContact(contactId);
-  //   });
+  //   .subscribe(
+  //     (params: Params) => {
+  //       this.contact = this.contactsService.getContact(params['id']);
+  //     }
+  //   )
   // }
+
+  ngOnInit() {
+    this.route.params
+    .subscribe((params: Params) => {
+      const contactId = params['id'];
+              this.contact = this.contactsService.getContact(contactId);
+    });
+  }
 
   // onDelete() {
   //   this.contactsService.deleteContact(this.contact);
