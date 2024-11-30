@@ -8,13 +8,13 @@ import { DocumentService } from './document.service';
   templateUrl: './documents.component.html',
   styleUrls: ['./documents.component.css']
 })
-export class DocumentsComponent implements OnInit, OnDestroy{
+export class DocumentsComponent implements OnInit, OnDestroy {
   selectedDocument: Document;
   documents: Document[] = [];
   private subscription: Subscription;
 
-  constructor(private documentService: DocumentService) {}
-  
+  constructor(private documentService: DocumentService) { }
+
   // ngOnInit() {
   //   this.documents = this.documentService.getDocuments();
   //   this.subscription = this.documentService.documentSelectedEvent

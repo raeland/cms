@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, EventEmitter } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
 import { Document } from '../document.model';
 import { DocumentService } from '../document.service';
 
@@ -9,10 +9,7 @@ import { DocumentService } from '../document.service';
   styleUrls: ['./document-list.component.css']
 })
 export class DocumentListComponent {
-  // @Output() 
-  // documentSelectedEvent = new EventEmitter();
   selectedDocument: Document;
-  // documentChangedEvent = new EventEmitter<Document[]>();
   private subscription: Subscription;
   documents: Document[] = [
     // new Document('1', 'Doc1', 'DocDescription1', 'www.abc1.org', []),
@@ -22,26 +19,35 @@ export class DocumentListComponent {
     // new Document('5', 'Doc5', 'DocDescription5', 'www.abc5.org', [])
   ];
 
-// documentId: string = '';
+  constructor(private documentService: DocumentService) { }
 
-constructor(private documentService: DocumentService) {}
+  ngOnInit() {
+    this.documentService.getDocuments().subscribe({
+      next: (documents: Document[]) => {
+        this.documents = documents;
+      },
+      error: (error) => {
+        console.error('Error fetching documents:', error);
+      }
+    });
 
-
-ngOnInit() {
-  this.documents = this.documentService.getDocuments();
-  this.subscription = this.documentService.documentSelectedEvent
-  .subscribe((document: Document) => {
-    this.selectedDocument = document;
-  });
-}
-
-ngOnDestroy() {
-  if (this.subscription) {
-    this.subscription.unsubscribe();
+    this.subscription = this.documentService.documentSelectedEvent.subscribe({
+      next: (document: Document) => {
+        this.selectedDocument = document;
+      },
+      error: (error) => {
+        console.error('Error in document selection:', error);
+      }
+    });
   }
-}
 
-// onSelect(document: Document) {
-//   this.documentService.documentSelectedEvent.emit(document);
-// }
+  ngOnDestroy() {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+
+  // onSelect(document: Document) {
+  //   this.documentService.documentSelectedEvent.emit(document);
+  // }
 }

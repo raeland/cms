@@ -18,8 +18,9 @@ import { MessagesComponent } from './messages/messages.component';
 import { MessageEditComponent } from './messages/message-edit/message-edit.component';
 import { MessageItemComponent } from './messages/message-item/message-item.component';
 import { MessageListComponent } from './messages/message-list/message-list.component';
-import { WindRefService } from './wind-ref.service';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ContactsFilterPipe } from './contacts/contacts-filter.pipe';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     ContactDetailComponent,
     ContactEditComponent,
     ContactListComponent,
-    ContactItemComponent,   
+    ContactItemComponent,
     DocumentsComponent,
     DocumentListComponent,
     DocumentItemComponent,
@@ -39,14 +40,16 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     MessageEditComponent,
     MessageListComponent,
     DocumentEditComponent,
+    ContactsFilterPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DragDropModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
