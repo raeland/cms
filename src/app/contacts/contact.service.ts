@@ -1,7 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Contact } from './contact.model';
 import { MOCKCONTACTS } from './MOCKCONTACTS';
-import { Subject, Observable} from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -15,10 +15,10 @@ export class ContactsService {
   contactChangedEvent = new Subject<Contact[]>();
   contactListChanged = new Subject<Contact[]>();
   private maxContactId: number;
-  
+
 
   constructor(private http: HttpClient) {
-    // this.contacts = MOCKCONTACTS;
+    this.contacts = MOCKCONTACTS;
   }
 
   getContacts(): Observable<Contact[]> {
@@ -61,18 +61,18 @@ export class ContactsService {
     if (pos < 0)
       return;
     newContact.id = originalContact.id;
-    this.contacts[pos] = newContact;  
+    this.contacts[pos] = newContact;
     // const contactsListClone = this.contacts.splice();
     this.storeContacts();
   }
-    
+
   addContact(contact: Contact) {
     if (!Contact)
       return;
     this.maxContactId++;
     contact.id = this.maxContactId.toString();
     this.contacts.push(contact);
-      // const contactsListClone = this.contacts.splice();
+    // const contactsListClone = this.contacts.splice();
     this.storeContacts();
   }
 
@@ -86,7 +86,7 @@ export class ContactsService {
     }
     return maxId + 1;
   }
-  
+
   storeContacts() {
     const contactsString = JSON.stringify(this.contacts);
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });

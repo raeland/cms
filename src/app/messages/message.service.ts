@@ -8,10 +8,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class MessageService {
+  messageSelectedEvent = new Subject<Message>();
+  messageChangedEvent = new Subject<Message[]>();
   private messages: Message[] = MOCKMESSAGES;
-  messageChangedEvent = new EventEmitter<Message[]>();
+  private maxMessageId: number;
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    this.messages = MOCKMESSAGES;
+   }
 
   getMessages(): Message[] {
     return this.messages.slice();
@@ -25,8 +29,20 @@ export class MessageService {
     }
     return null;
   }
+
+  private getMaxId(): number {
+    let maxId = 0;
+    for (const message of this.messages) {
+      const currentId = parseInt(message.id, 10);
+      if (currentId > maxId) {
+        maxId = currentId;
+      }
+    }
+    return maxId;
+  }
+  
   addMessage(message: Message) {
     this.messages.push(message);
-    this.messageChangedEvent.emit(this.messages.slice());
+    this.messageChangedEvent.next(this.messages.slice());
   }
 }
