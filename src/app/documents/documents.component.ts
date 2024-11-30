@@ -13,7 +13,7 @@ export class DocumentsComponent implements OnInit, OnDestroy {
   documents: Document[] = [];
   private subscription: Subscription;
 
-  constructor(private documentService: DocumentService) { }
+  constructor(private documentService: DocumentService) {}
 
   // ngOnInit() {
   //   this.documents = this.documentService.getDocuments();
@@ -22,9 +22,15 @@ export class DocumentsComponent implements OnInit, OnDestroy {
   //     this.selectedDocument = document;
   //   });
   // }
+  // ngOnInit(): void {
+  //   this.documentService.documentChangedEvent.subscribe((document: Document) => {
+  //     this.selectedDocument = document;
+  //   })
+  // }
   ngOnInit(): void {
-    this.documentService.documentChangedEvent.subscribe((document: Document) => {
-      this.selectedDocument = document
+    this.subscription = this.documentService.documentListChangedEvent
+    .subscribe((documents: Document[]) => {
+    this.documents = documents;
     })
   }
 
